@@ -1,0 +1,24 @@
+#!/usr/bin/env bun
+import { Shagent } from "./src/controller/shagent.ts";
+
+const apiKey = process.env.OPENROUTER_API_KEY;
+if (!apiKey) {
+  console.error("Error: OPENROUTER_API_KEY is required.");
+  process.exit(1);
+}
+
+const shagent = new Shagent({
+  apiKey,
+  model: process.env.SHAGENT_MODEL || "openrouter/free"
+});
+
+await shagent.initialize();
+
+const task = process.argv.slice(2).join(" ");
+if (task) {
+  await shagent.executeTask(task);
+} else {
+  console.log("Usage: shagent 'task description'");
+}
+
+await shagent.close();

@@ -1,0 +1,19 @@
+{
+  "repoId": "r17csbgpyq4r12nt7g9d2tx14h87mec4",
+  "owner": "uncap_user",
+  "name": "shagent",
+  "originType": "native",
+  "legacy": {
+    "hasGitHub": false,
+    "hasGit": true
+  },
+  "defaults": {
+    "file": "public",
+    "fragment": "public",
+    "issue": "public",
+    "pullRequest": "public",
+    "branch": "public",
+    "comment": "public"
+  },
+  "headSha": ""
+}
