@@ -3,39 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>shagent — Bun CLI agent (OpenRouter + MCP)</title>
+  <title>shagent – Bun CLI agent (OpenRouter + MCP)</title>
   <style>
-    :root { color-scheme: light dark; }
-    body { font-family: ui-sans-serif, system-ui, sans-serif; margin: 0; line-height: 1.5; background: #0b1020; color: #e8ecf7; }
+    body { font-family: ui-sans-serif, system-ui, sans-serif; background:#0b1020; color:#e8eefc; margin:0; line-height:1.55; }
     main { max-width: 42rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
     h1 { font-size: 2rem; margin: 0 0 0.5rem; }
-    .tag { display: inline-block; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: #9db0ff; border: 1px solid #3a4a7a; border-radius: 999px; padding: 0.2rem 0.6rem; margin-bottom: 1rem; }
-    p { color: #c5cce0; }
-    pre { background: #141a2e; border: 1px solid #2a3558; border-radius: 8px; padding: 1rem; overflow-x: auto; font-size: 0.9rem; }
-    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
-    a { color: #9db0ff; }
-    .note { margin-top: 1.5rem; padding: 0.9rem 1rem; border-left: 3px solid #5b6cff; background: #141a2e; }
-    footer { margin-top: 2.5rem; font-size: 0.85rem; color: #8b93a8; }
+    .badge { display:inline-block; font-size:0.75rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:#9ec5ff; background:#1a2744; border:1px solid #2b3f66; border-radius:999px; padding:0.35rem 0.7rem; margin-bottom:1rem; }
+    p { color:#b7c3de; }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    pre { background:#121a2e; border:1px solid #243352; border-radius:10px; padding:1rem; overflow:auto; color:#d7e3ff; }
+    a { color:#8ec5ff; }
+    .note { margin-top:1.5rem; padding:1rem 1.1rem; border-radius:10px; background:#152038; border:1px solid #2a4068; }
+    ul { color:#b7c3de; }
   </style>
 </head>
 <body>
   <main>
-    <span class="tag">Local CLI · not a hosted SaaS</span>
+    <div class="badge">CLI harness — not a hosted platform</div>
     <h1>shagent</h1>
     <p>
-      Small <strong>Bun</strong> CLI that calls <strong>OpenRouter</strong> and drives tools over
-      <strong>MCP</strong> (default: filesystem server for the current directory).
-      This page is docs only — the product is <code>./shagent</code> in this repo.
+      Small Bun CLI that talks to <strong>OpenRouter</strong> and drives tools over
+      the <strong>Model Context Protocol (MCP)</strong>. There is no product domain,
+      dashboard, or multi-tenant “agent platform” here.
     </p>
-    <h2>Run it</h2>
-    <pre><code>bun install
-export OPENROUTER_API_KEY=sk-or-...
-./shagent 'list files in this directory'</code></pre>
     <div class="note">
-      There is no deploy, no dashboard, and no third-party “Get Started” site.
-      See <a href="https://github.com/michaelmonetized/shagent#readme">README.md</a> for the real usage path.
+      This page used to claim a secure hosted platform with sandboxes and SaaS
+      integrations. That was fiction. The real product is the local CLI below.
     </div>
-    <footer>michaelmonetized/shagent — harness, not a platform.</footer>
+    <h2>Run</h2>
+    <pre>bun install
+export OPENROUTER_API_KEY=sk-or-...
+./shagent 'list files in this directory'</pre>
+    <ul>
+      <li>Default MCP transport: filesystem tools for the current directory</li>
+      <li>Optional model override: <code>SHAGENT_MODEL</code> (default <code>openrouter/free</code>)</li>
+      <li>Source of truth: <a href="https://github.com/michaelmonetized/shagent">github.com/michaelmonetized/shagent</a></li>
+    </ul>
+    <p>See <code>README.md</code> for how the OpenRouter + MCP loop works.</p>
   </main>
 </body>
 </html>
