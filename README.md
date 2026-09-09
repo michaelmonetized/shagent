@@ -4,7 +4,7 @@ Small Bun CLI agent that talks to **OpenRouter** and drives tools over the **Mod
 
 Default tool transport in the main controller is `@modelcontextprotocol/server-filesystem` for the current working directory. An alternate entry (`src/controller/index.ts`) lists tools from `chrome-devtools-mcp` instead.
 
-`index.html` in this repo is marketing fluff, not the product.
+`index.html` is a static docs lander for the local `./shagent` CLI (not a hosted product).
 
 ## Requirements
 

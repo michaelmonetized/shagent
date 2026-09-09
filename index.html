@@ -3,45 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>shagent – AI Agents, Unleashed</title>
+  <title>shagent — Bun CLI agent (OpenRouter + MCP)</title>
   <style>
-    body {font-family: 'Inter', system-ui, sans-serif; background:#fafafa; color:#111; margin:0; padding:0;}
-    .hero {background:#0d6efd; color:#fff; padding:4rem 2rem; text-align:center;}
-    .hero h1 {font-size:3rem; margin:0.5rem 0;}
-    .hero p {font-size:1.2rem; margin:1rem 0 2rem;}
-    .features {display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; padding:2rem;}
-    .feature-card {background:#fff; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.1); padding:1.5rem; width:260px;}
-    .feature-card h3 {margin-top:0; color:#0d6efd;}
-    .cta {background:#28a745; color:#fff; padding:1rem 2rem; border-radius:6px; text-align:center; margin:2rem 0; font-weight:bold;}
-    footer {text-align:center; padding:1rem; font-size:0.9rem; color:#666;}
-
-    @media (max-width:600px){ .hero h1{font-size:2rem;} .hero p{font-size:1rem;} }
+    :root { color-scheme: light dark; }
+    body { font-family: ui-sans-serif, system-ui, sans-serif; margin: 0; line-height: 1.5; background: #0b1020; color: #e8ecf7; }
+    main { max-width: 42rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+    h1 { font-size: 2rem; margin: 0 0 0.5rem; }
+    .tag { display: inline-block; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: #9db0ff; border: 1px solid #3a4a7a; border-radius: 999px; padding: 0.2rem 0.6rem; margin-bottom: 1rem; }
+    p { color: #c5cce0; }
+    pre { background: #141a2e; border: 1px solid #2a3558; border-radius: 8px; padding: 1rem; overflow-x: auto; font-size: 0.9rem; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    a { color: #9db0ff; }
+    .note { margin-top: 1.5rem; padding: 0.9rem 1rem; border-left: 3px solid #5b6cff; background: #141a2e; }
+    footer { margin-top: 2.5rem; font-size: 0.85rem; color: #8b93a8; }
   </style>
 </head>
 <body>
-  <section class="hero">
+  <main>
+    <span class="tag">Local CLI · not a hosted SaaS</span>
     <h1>shagent</h1>
-    <p>Launch, scale, and monitor autonomous AI agents—all from one secure platform.</p>
-  </section>
-  <section class="features">
-    <div class="feature-card">
-      <h3>Isolated Run‑times</h3>
-      <p>Zero‑trust sandboxes keep each workflow independent and safe.</p>
+    <p>
+      Small <strong>Bun</strong> CLI that calls <strong>OpenRouter</strong> and drives tools over
+      <strong>MCP</strong> (default: filesystem server for the current directory).
+      This page is docs only — the product is <code>./shagent</code> in this repo.
+    </p>
+    <h2>Run it</h2>
+    <pre><code>bun install
+export OPENROUTER_API_KEY=sk-or-...
+./shagent 'list files in this directory'</code></pre>
+    <div class="note">
+      There is no deploy, no dashboard, and no third-party “Get Started” site.
+      See <a href="https://github.com/michaelmonetized/shagent#readme">README.md</a> for the real usage path.
     </div>
-    <div class="feature-card">
-      <h3>Full Tool Integration</h3>
-      <p>Connect GitHub, Notion, Slack, Sentry, and more with a single config.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Smart Retry &amp; Recovery</h3>
-      <p>Automatic back‑off, alerts, and state persistence keep you productive.</p>
-    </div>
-  </section>
-  <div class="cta">
-    Deploy your first agent in 5 minutes – <a href="https://github.com/shagent/getting-started" style="color:#fff; text-decoration:underline;">Get Started</a>
-  </div>
-  <footer>
-    © 2026 shagent Project – Built by Rusty P. Shackelford
-  </footer>
+    <footer>michaelmonetized/shagent — harness, not a platform.</footer>
+  </main>
 </body>
 </html>
